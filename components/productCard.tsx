@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {Text, View, Image, StyleSheet} from 'react-native'
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
    
@@ -12,17 +11,11 @@ export function ProductCard(
     ) {
     return (
        
-        <View key={1} style={styles.card}>
-        <Image
-            style={styles.logo}
-        //   resizeMode="cover"
-            source={{ uri: image }}
-        />
+        <Card key={1} containerStyle={styles.card}>
+        <Image style={styles.logo} source={{ uri: image }} />
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.description}>{name}</Text>
-        </View>
-        
-    //   </Card>
+        </Card>
     );
   
 }
@@ -30,30 +23,26 @@ export function ProductCard(
 
 const styles = StyleSheet.create({
     card: {
-    //   paddingTop: 50,
-      // borderStyle: "solid",
-      borderColor: "#000",
-      borderStyle: 'solid',
-      borderWidth: 5,
+      alignContent: 'center',
+      justifyContent: 'center',    
+      // width: 150,
+      // height: 150,
+      
       margin: 2
     },
 
     name: {
-        width: 66,
-        height: 58,
-        // margin: 2
+        
       },
 
 
     description: {
-        width: 66,
-        height: 58,
-        // margin: 2
+        
       },
     
     logo: {
       width: 100,
       height: 100,
-      margin: 2
+      margin: 5
     },
   });

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, StyleSheet, StatusBar, View } from 'react-native';
-import { SearchBar} from 'react-native-elements';
+import { SearchBar, Header as Head} from 'react-native-elements';
 
 import Constants from 'expo-constants';
 
@@ -35,9 +35,7 @@ const styles = StyleSheet.create({
   },
   searchBar: {
       width: '60%',
-      backgroundColor: 'transparent',
-      borderWidth: 0
-      
+      backgroundColor: 'transparent',      
   }
   
 });
