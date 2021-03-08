@@ -1,50 +1,64 @@
-import React, { useState } from 'react';
-import { Text, StyleSheet, StatusBar, View , SafeAreaView, ScrollView} from 'react-native';
-import { SearchBar} from 'react-native-elements';
+import React, { useState } from "react";
+import { Text, StyleSheet, StatusBar, View , SafeAreaView, ScrollView} from "react-native";
+import { SearchBar} from "react-native-elements";
 
-import Constants from 'expo-constants';
-import {} from 'react-native'
-import {ProductCard} from '../components'
+import Constants from "expo-constants";
+import {} from "react-native"
+import {ProductCard} from "../components"
 
 const products = [
     {
-       name: 'brynn',
-       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+       name: "Automatica women's",
+       description: "A very long description about the product sold at this store",
+       avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
+       created: '3 days ago',
+       oldPrice: 10,
+       newPrice: 7
     },
     {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+      name: "Automatica women's",
+      description: "A very long description about the product sold at this store",
+      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
+      created: '3 days ago',
+      oldPrice: 10,
+      newPrice: 7
+     },
+
+     {
+      name: "Automatica women's",
+      description: "A very long description about the product sold at this store",
+      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
+      created: '3 days ago',
+      oldPrice: 10,
+      newPrice: 7
+     },
+
+     {
+      name: "Automatica women's",
+      description: "A very long description about the product sold at this store",
+      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
+      created: '3 days ago',
+      oldPrice: 10,
+      newPrice: 7
+     },
+
+     {
+      name: "Automatica women's",
+      description: "A very long description about the product sold at this store",
+      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
+      created: '3 days ago',
+      oldPrice: 10,
+      newPrice: 7
      },
      {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+      name: "Automatica women's",
+      description: "A very long description about the product sold at this store",
+      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
+      created: '3 days ago',
+      oldPrice: 10,
+      newPrice: 7
      },
-     {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-     },
-     {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-     }, {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-     }, {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-     }, 
-     {
-      name: 'brynn',
-      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-      },
-       {
-         name: 'brynn',
-         avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-      }, 
-      {
-       name: 'brynn',
-       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-       },
+     
      
    ]
 
@@ -60,7 +74,16 @@ export function ProductList() {
        {
         products.map((u, i) => {
             return (
-            <ProductCard key={i}/>
+            <ProductCard 
+               key={i} 
+               image={u.avatar} 
+               name={u.name} 
+               description={u.description}
+               oldPrice={u.oldPrice}
+               newPrice={u.newPrice}
+               created={u.created}
+
+               />
             );
         })
         }
@@ -78,28 +101,17 @@ const styles = StyleSheet.create({
     },
     scrollView: {
       flex: 1,
-      //   width: '100%',
-      //   padding: 10,
-      // flex: 2,
-      //   flexDirection: 'row',
-      //   flexWrap: 'wrap',
-      //   borderStyle: 'solid',
-      //   borderColor: 'black',
-      // //   borderWidth: 1
+     
       },
 
       productList :{
-         // flex: 2,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        // marginHorizontal: 20,
-        alignContent: 'center',
-        justifyContent: 'space-around',
+        
+        flexDirection: "row",
+        flexWrap: "wrap",
+        alignContent: "center",
+        justifyContent: "space-around",
        
-      //   borderStyle: 'solid',
-      //   borderColor: 'black',
-      //   borderWidth: 1,
-      //   overflow: 'scroll'
+      
       }
   
 });
