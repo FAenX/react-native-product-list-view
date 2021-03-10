@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, StatusBar, View } from 'react-native';
-import { SearchBar, Header as Head} from 'react-native-elements';
+import { Text, StyleSheet, StatusBar, View, SafeAreaView } from 'react-native';
+import { SearchBar, Header as Head, Icon} from 'react-native-elements';
+// import {FiMenu} from 'react-icons/fi'
 
 import Constants from 'expo-constants';
 
@@ -8,34 +9,55 @@ export function Header() {
   
 
   return (
-    <View style={styles.container}>
-      <Text>hello</Text>
+    <SafeAreaView style={styles.container}>
+    {/* <View style={styles.container}> */}
+      <Icon name="menu" />
       <SearchBar
         placeholder="Type Here..."
         // onChangeText={this.updateSearch}
         // value={search}
-        containerStyle={styles.searchBar}
+        containerStyle={styles.searchBarContainer}
+        inputContainerStyle={styles.inputContainerStyle}
+        lightTheme={true}
       />
-      <Text>hello</Text>
-    </View>
+      <Icon name='notifications'></Icon>
+    {/* </View> */}
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingLeft: 20,
-    paddingRight: 20,
+    // paddingLeft: 30,
+    // paddingRight: 30,
+    fontWeight: 'bold'
     // borderStyle: 'solid',
     // borderColor: 'black',
     // borderWidth: 5
     
   },
-  searchBar: {
-      width: '60%',
-      backgroundColor: 'transparent',      
+  searchBarContainer: {
+      width: '75%',     
+      backgroundColor: 'transparent',     
+      marginLeft: 10,
+      marginRight: 10,
+      margin: 1
+      // borderStyle: 'solid',
+      // borderColor: 'transparent',
+      // borderWidth: 0,
+      // border
+     
+  },
+  inputContainerStyle: {
+    backgroundColor: 'white',
+    //  borderStyle: 'solid',
+    //   borderColor: 'black',
+    //   borderWidth: 0,
+    
   }
+  
   
 });

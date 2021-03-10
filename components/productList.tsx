@@ -97,7 +97,7 @@ export function ProductList() {
 
 const styles = StyleSheet.create({
    container: {
-      flex: 1,
+      flex: 5,
     },
     scrollView: {
       flex: 1,

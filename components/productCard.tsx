@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {Text, View, Image, StyleSheet, ImageBackground} from 'react-native'
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
+// import Video from "react-native-video";
+import { Video, AVPlaybackStatus } from 'expo-av';
+
    
 type Product = {
   name: string, 
@@ -12,21 +15,56 @@ type Product = {
   created: string
 }
 
+function TextArea(props: Partial<Product>){
+  return(
+    <View style={styles.text}>
+        <Text style={styles.name}>{props.name}</Text>
+        <Text style={styles.description}>{props.description}</Text>
+        <Text style={styles.created}>{props.created}</Text>
+        <Text style={styles.cost}>{`$${props.oldPrice} - $${props.newPrice}`}</Text>
+      </View>
+  )
+}
+
+
+function BackgroundVideo(props: Partial<Product>){
+  const video = React.useRef(null);
+  const [status, setStatus] = React.useState({});
+  return(
+    // <View key={1} style={styles.card}>
+        
+        
+    // <ImageBackground style={styles.videobg} source={{ uri: props.image }}>
+        
+    //         <Icon name='visibility' color="white"/>
+    //         <Text style={{marginLeft: 5, color: 'white'}}>3.9k+ </Text>
+        
+    //     </ImageBackground>
+        // </View>
+        <Video
+        source={require("../assets/video1.mp4")}
+        style={styles.videobg}
+        ref={video}
+        useNativeControls
+        resizeMode="contain"
+        isLooping
+        isMuted
+        onPlaybackStatusUpdate={status => setStatus(() => status)}
+        />
+  )
+}
+
 
 export function ProductCard(
   props: Product) {
     return (
        <View style={styles.product} >
-        <View key={1} style={styles.card}>
-        <ImageBackground style={styles.logo} source={{ uri: props.image }} />
-        </View>
-
-        <View style={styles.text}>
-        <Text style={styles.name}>{props.name}</Text>
-        <Text style={styles.description}>{props.description}</Text>
-        <Text style={styles.created}>{props.created}</Text>
-        <Text style={styles.cost}>{`$${props.oldPrice} - $${props.newPrice}`}</Text>
-        </View>
+        
+        <BackgroundVideo image={props.image}/>
+        <TextArea {...props}/>
+        
+        
+       
         </View>
     );
   
@@ -34,68 +72,60 @@ export function ProductCard(
 
 
 const styles = StyleSheet.create({
-    card: {
-      // flex: 1,
-      alignContent: 'center',
-      justifyContent: 'center',    
-      width: 150,
-      height: 150,
-      // borderStyle: 'solid',
-      // borderColor: 'black',
-      // borderWidth: 1
-      borderRadius: 10
-      
-      
-    
-    },
 
     name: {
       textAlign: 'left',
       textTransform: 'capitalize',
       fontWeight: 'bold',
-      // fontColor: 'grey',
-      fontSize: 13
+      color: '#1e242d',
+      fontSize: 13,
         
       },
 
 
     description: {
       textAlign: 'left',
-      fontWeight: '300',
-      color: 'grey',
+      fontWeight: '900',
+      color: '#5B5F65',
       fontSize: 10,
       // textTransform: '',
         
       },
     
-    logo: {
-      
+    videobg: {
       flex: 1,
-      borderStyle: 'solid',
-      borderColor: 'black',
-      borderWidth: 1,
-      borderRadius: 10
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      // borderStyle: 'solid',
+      // borderColor: 'black',
+      // borderWidth: 1, 
+      borderRadius: 5,
+      backgroundColor: "black",
       
     },
 
     product: {
       // flex: 1,
-      // justifyContent:'center',
+      justifyContent:'center',
       alignContent:'center',
       textAlign: 'center',
-      // borderStyle: 'solid',
-      // borderColor: 'black',
-      // borderWidth: 1,
       height: 250,
-      width: 160
+      width: 170,
+      borderRadius: 10,
+      backgroundColor: 'white',
+      marginBottom: 10
     },
     text: {
       padding: 5
     },
     created:{
+      color: '#C1D0E4'
 
     },
     cost: {
-      textAlign: 'right'
-    }
+      textAlign: 'right',
+      fontWeight: 'bold',
+      color: '#C1D0E4'
+    },
+    
   });
