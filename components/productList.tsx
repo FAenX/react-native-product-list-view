@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, StatusBar, View , SafeAreaView, ScrollView} from "react-native";
-import { SearchBar} from "react-native-elements";
+// import { SearchBar} from "react-native-elements";
 
-import Constants from "expo-constants";
-import {} from "react-native"
+// import Constants from "expo-constants";
+// import {} from "react-native"
 import {ProductCard} from "../components"
 
 const products = [

@@ -47,7 +47,8 @@ function BackgroundVideo(props: Partial<Product>){
         ref={video}
         useNativeControls
         resizeMode="stretch"
-        isLooping        
+        isLooping 
+        isMuted       
         // auto?
         onPlaybackStatusUpdate={status => setStatus(() => status)}
         />
