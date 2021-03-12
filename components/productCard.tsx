@@ -31,16 +31,9 @@ function BackgroundVideo(props: Partial<Product>){
   const video = React.useRef(null);
   const [status, setStatus] = React.useState({});
   return(
-    // <View key={1} style={styles.card}>
+    <View key={1} style={styles.card}>
         
         
-    // <ImageBackground style={styles.videobg} source={{ uri: props.image }}>
-        
-    //         <Icon name='visibility' color="white"/>
-    //         <Text style={{marginLeft: 5, color: 'white'}}>3.9k+ </Text>
-        
-    //     </ImageBackground>
-        // </View>
         <Video
         source={require("../assets/video1.mp4")}
         style={styles.videobg}
@@ -51,7 +44,13 @@ function BackgroundVideo(props: Partial<Product>){
         isMuted       
         // auto?
         onPlaybackStatusUpdate={status => setStatus(() => status)}
-        />
+        />        
+            
+        
+        <Icon name='visibility' color="white"/>
+            <Text style={{marginLeft: 5, color: 'white', zIndex: 100}}>3.9k+ </Text>
+        </View>
+        
   )
 }
 
@@ -60,6 +59,7 @@ export function ProductCard(
   props: Product) {
     return (
        <View style={styles.product} >
+        
         
         <BackgroundVideo image={props.image}/>
         <TextArea {...props}/>
@@ -73,6 +73,10 @@ export function ProductCard(
 
 
 const styles = StyleSheet.create({
+
+  card: {
+    flex: 1
+  },
 
     name: {
       textAlign: 'left',
@@ -102,6 +106,12 @@ const styles = StyleSheet.create({
       // borderWidth: 1, 
       borderRadius: 5,
       backgroundColor: "black",
+      position: 'absolute',
+      zIndex: -1,
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0,
       
     },
 
