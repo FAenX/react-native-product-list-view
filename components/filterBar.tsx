@@ -1,47 +1,62 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, StatusBar, View, SafeAreaView,  } from 'react-native';
+import { Text, StyleSheet, StatusBar, View, SafeAreaView, GestureResponderEvent,  } from 'react-native';
 import { SearchBar, Header as Head, Icon,Button } from 'react-native-elements';
 // import {FiMenu} from 'react-icons/fi'
 
 import Constants from 'expo-constants';
 
-function Title(props: {name: string}){
+const Title =(props: {name: string})=>{
     return(
         <Text style={styles.buttonTitle}>{props.name}</Text>
     )
 }
 
+
 export function FilterBar() {
-  const press=()=>{}
+
+  const [active, setActive] = React.useState('')
+ 
+  const onTap=(event: GestureResponderEvent, type: string)=>{
+    event.preventDefault()
+    setActive(type)
+    // 
+  }
 
   return (
     <SafeAreaView style={styles.container}>
-    {/* <Button 
-        title={<Title name={'popular'}/>}
-        color="yellow"
-        onPress={press}
-        containerStyle={styles.button}
-
-    />
-    <Button
-        title={<Title name={'popular'}/>}
-        onPress={press}
-        containerStyle={styles.button}
-    />
-     <Button 
-      title={<Title name={'popular'}/>}
-      onPress={press}
-      containerStyle={styles.button}
-    />
-    <Button
-        title={<Title name={'popular'}/>}
-        onPress={press}
-        containerStyle={styles.button}
-    /> */}
-    <Text style={styles.activeTitle}>Popular</Text>
-    <Text style={styles.buttonTitle}>Auction</Text>
-    <Text style={styles.buttonTitle}>Flat-rate</Text>
-    <Text style={styles.buttonTitle}>Scheduled</Text>
+    <Text 
+      key={4}
+      style={
+        active == 'popular' ? 
+        styles.activeTitle : 
+        styles.buttonTitle
+      } 
+      onPress={(event)=>onTap(event, 'popular')}>Popular
+      </Text>
+    <Text 
+    style={
+      active == 'auction' ? 
+      styles.activeTitle : 
+      styles.buttonTitle
+    } 
+      onPress={(event)=>onTap(event, 'auction')}>Auction
+   </Text>
+    <Text 
+    style={
+       active == 'flat-rate' ? 
+       styles.activeTitle : 
+       styles.buttonTitle
+    }
+    onPress={(event)=>onTap(event, 'flat-rate')}
+    >Flat-rate</Text>
+    <Text 
+    style={
+      active == 'scheduled' ? 
+      styles.activeTitle : 
+      styles.buttonTitle
+   }
+   onPress={(event)=>onTap(event, 'scheduled')}
+    >Scheduled</Text>
 
     </SafeAreaView>
   );

@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, StatusBar, View, SafeAreaView } from 'react-native';
+import { Text, StyleSheet, StatusBar, View, SafeAreaView, GestureResponderEvent } from 'react-native';
 import { SearchBar, Header as Head, Icon} from 'react-native-elements';
 // import {FiMenu} from 'react-icons/fi'
 
 import Constants from 'expo-constants';
 
-export function Header() {
-  
+export const Header =()=> {
+
+  const [term, setTerm] = useState('')
+  const updateSearch=(ter: string)=>{
+    
+      // setTerm()
+      setTerm(ter)
+      console.log(term)
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -14,8 +21,8 @@ export function Header() {
       <Icon name="menu" />
       <SearchBar
         placeholder="Type Here..."
-        // onChangeText={this.updateSearch}
-        // value={search}
+        onChangeText={updateSearch}
+        value={term}
         containerStyle={styles.searchBarContainer}
         inputContainerStyle={styles.inputContainerStyle}
         lightTheme={true}
