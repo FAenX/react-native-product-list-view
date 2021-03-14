@@ -2,8 +2,6 @@ import React from "react";
 import {StyleSheet, View , SafeAreaView, ScrollView, Text} from "react-native";
 import {connect} from 'react-redux'
 import { ProductCard } from ".";
-import { Product } from "../types";
-import uuid from 'react-native-uuid'
 
 
 
@@ -21,9 +19,9 @@ function ProductList(props: any) {
        {
         s && s.length > 0 ? s.map((datum: any) => {
           return (
-            <>
+            
           <ProductCard 
-             key={uuid.v4()} 
+             key={Math.random()} 
              avatar={datum.video} 
              name={datum.name} 
              description={datum.description}
@@ -34,7 +32,7 @@ function ProductList(props: any) {
              type={datum.type}
       
              />
-             </>
+             
           );
       }): <Text>No data ...</Text>
         }

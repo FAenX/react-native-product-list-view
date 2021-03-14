@@ -13,7 +13,7 @@ export function BackgroundVideo(props: Product){
     
     React.useEffect(()=>{
       video ? video.current.playAsync(): null
-    }, [video])
+    }, [])
   
     return(
       <View key={1} style={styles.card}>

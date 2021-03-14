@@ -23,7 +23,7 @@ export default function App() {
   React.useEffect(()=>{
     store.dispatch({type: 'SET_STATE', state: products})
     // console.log(products)
-  }, [store.getState()])
+  }, [store.getState().products])
   
   
   
