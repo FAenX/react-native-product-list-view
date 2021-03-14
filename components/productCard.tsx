@@ -1,10 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {Text, View, Image, StyleSheet, ImageBackground} from 'react-native'
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
 // import Video from "react-native-video";
-import { Video, AVPlaybackStatus } from 'expo-av';
-import { Product} from './types'
+import { Product} from '../types'
 import {BackgroundVideo} from './backgroundVideo'
 
    
@@ -30,7 +28,7 @@ export function ProductCard(
        <View style={styles.product} >
         
         
-        <BackgroundVideo image={props.image} video={props.video}/>
+        <BackgroundVideo {...props}/>
         <TextArea {...props}/>
         
         

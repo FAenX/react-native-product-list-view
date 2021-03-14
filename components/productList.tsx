@@ -1,98 +1,42 @@
 import React from "react";
-import {StyleSheet, View , SafeAreaView, ScrollView} from "react-native";
-// import { SearchBar} from "react-native-elements";
-
-// import Constants from "expo-constants";
-// import {} from "react-native"
-import {ProductCard} from "../components"
-
-const products = [
-    {
-       name: "Automatica women's",
-       description: "A very long description about the product sold at this store",
-       avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
-       created: '3 days ago',
-       oldPrice: 10,
-       newPrice: 7,
-       video: "../assets/video1.mp4"
-    },
-    {
-      name: "Automatica women's",
-      description: "A very long description about the product sold at this store",
-      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
-      created: '3 days ago',
-      oldPrice: 10,
-      newPrice: 7,
-      video: "../assets/video1.mp4"
-     },
-
-     {
-      name: "Automatica women's",
-      description: "A very long description about the product sold at this store",
-      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
-      created: '3 days ago',
-      oldPrice: 10,
-      newPrice: 7,
-      video: "../assets/video1.mp4"
-     },
-
-     {
-      name: "Automatica women's",
-      description: "A very long description about the product sold at this store",
-      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
-      created: '3 days ago',
-      oldPrice: 10,
-      newPrice: 7,
-      video: "../assets/video1.mp4"
-     },
-
-     {
-      name: "Automatica women's",
-      description: "A very long description about the product sold at this store",
-      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
-      created: '3 days ago',
-      oldPrice: 10,
-      newPrice: 7,
-      video: "../assets/video1.mp4"
-     },
-     {
-      name: "Automatica women's",
-      description: "A very long description about the product sold at this store",
-      avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
-      created: '3 days ago',
-      oldPrice: 10,
-      newPrice: 7,
-      video: "../assets/video1.mp4"
-     },
-     
-     
-   ]
+import {StyleSheet, View , SafeAreaView, ScrollView, Text} from "react-native";
+import {connect} from 'react-redux'
+import { ProductCard } from ".";
+import { Product } from "../types";
+import uuid from 'react-native-uuid'
 
 
-export function ProductList() {
+
+
+function ProductList(props: any) {
+  const s = Object.values(props.products)
+
+ 
   
-
   return (
    <SafeAreaView style={styles.container}>
   
     <ScrollView style={styles.scrollView}>
        <View style={styles.productList}>
        {
-        products.map((u, i) => {
-            return (
-            <ProductCard 
-               key={i} 
-               image={u.avatar} 
-               name={u.name} 
-               description={u.description}
-               oldPrice={u.oldPrice}
-               newPrice={u.newPrice}
-               created={u.created}
-               video={u.video}
-
-               />
-            );
-        })
+        s.length > 0 ? s.map((datum: any) => {
+          return (
+            <>
+          <ProductCard 
+             key={uuid.v4()} 
+             avatar={datum.video} 
+             name={datum.name} 
+             description={datum.description}
+             oldPrice={datum.oldPrice}
+             newPrice={datum.newPrice}
+             created={datum.created}
+             video={datum.video}
+             type={datum.type}
+      
+             />
+             </>
+          );
+      }): <Text>No data ...</Text>
         }
 
        </View>
@@ -108,11 +52,9 @@ const styles = StyleSheet.create({
     },
     scrollView: {
       flex: 1,
-     
       },
 
       productList :{
-        
         flexDirection: "row",
         flexWrap: "wrap",
         alignContent: "center",
@@ -122,5 +64,14 @@ const styles = StyleSheet.create({
       }
   
 });
+
+const mapStateToProps = (state: { products: any; }) => {
+  const { products } = state
+  return { products }
+};
+
+export default connect(mapStateToProps)(ProductList)
+
+
 
 

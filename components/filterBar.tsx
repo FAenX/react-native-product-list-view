@@ -4,12 +4,8 @@ import { SearchBar, Header as Head, Icon,Button } from 'react-native-elements';
 // import {FiMenu} from 'react-icons/fi'
 
 import Constants from 'expo-constants';
-
-const Title =(props: {name: string})=>{
-    return(
-        <Text style={styles.buttonTitle}>{props.name}</Text>
-    )
-}
+import { filterData } from '../utils';
+import { store } from '../store';
 
 
 export function FilterBar() {
@@ -22,40 +18,47 @@ export function FilterBar() {
     // 
   }
 
+  React.useEffect(()=>{
+    const data = filterData(active)
+    console.log(data)
+    store.dispatch({type: 'SET_STATE', state: data})
+    
+  }, [active])
+
   return (
     <SafeAreaView style={styles.container}>
     <Text 
       key={4}
       style={
-        active == 'popular' ? 
+        active == 'Popular' ? 
         styles.activeTitle : 
         styles.buttonTitle
       } 
-      onPress={(event)=>onTap(event, 'popular')}>Popular
+      onPress={(event)=>onTap(event, 'Popular')}>Popular
       </Text>
     <Text 
     style={
-      active == 'auction' ? 
+      active == 'Auction' ? 
       styles.activeTitle : 
       styles.buttonTitle
     } 
-      onPress={(event)=>onTap(event, 'auction')}>Auction
+      onPress={(event)=>onTap(event, 'Auction')}>Auction
    </Text>
     <Text 
     style={
-       active == 'flat-rate' ? 
+       active == 'Flat-rate' ? 
        styles.activeTitle : 
        styles.buttonTitle
     }
-    onPress={(event)=>onTap(event, 'flat-rate')}
+    onPress={(event)=>onTap(event, 'Flat-rate')}
     >Flat-rate</Text>
     <Text 
     style={
-      active == 'scheduled' ? 
+      active == 'Scheduled' ? 
       styles.activeTitle : 
       styles.buttonTitle
    }
-   onPress={(event)=>onTap(event, 'scheduled')}
+   onPress={(event)=>onTap(event, 'Scheduled')}
     >Scheduled</Text>
 
     </SafeAreaView>

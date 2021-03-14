@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Text, StyleSheet, StatusBar, View, SafeAreaView, GestureResponderEvent } from 'react-native';
 import { SearchBar, Header as Head, Icon} from 'react-native-elements';
-// import {FiMenu} from 'react-icons/fi'
+import {store} from '../store/index'
+import {filterData} from '../utils'
 
 import Constants from 'expo-constants';
+
+
+// console.log(data)
 
 export const Header =()=> {
 
@@ -12,8 +16,16 @@ export const Header =()=> {
     
       // setTerm()
       setTerm(ter)
-      console.log(term)
+      // console.log(term)
+      
+      
   }
+
+  React.useEffect(()=>{
+    const data = filterData(term)
+    store.dispatch({type: 'SET_STATE', state: data})
+    
+  }, [term])
 
   return (
     <SafeAreaView style={styles.container}>

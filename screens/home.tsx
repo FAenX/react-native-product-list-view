@@ -2,8 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import {StyleSheet, SafeAreaView} from 'react-native'
-import {ProductList, Header, FilterBar} from '../components'
-
+import {Header, FilterBar} from '../components'
+import ProductList from '../components/productList'
+ 
 
 
 

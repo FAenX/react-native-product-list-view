@@ -1,14 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Text, View, Image, StyleSheet, ImageBackground} from 'react-native'
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import {Text, View, Image, StyleSheet} from 'react-native'
+import { Icon } from 'react-native-elements'
 // import Video from "react-native-video";
-import { Video, AVPlaybackStatus } from 'expo-av';
-import { Product} from './types'
+import { Product} from '../types'
 
 
 
-export function VideoOverlayText(props: Partial<Product>){
+export function VideoOverlayText(props: Product){
+  console.log(props)
     
   
     return(
@@ -22,7 +21,7 @@ export function VideoOverlayText(props: Partial<Product>){
   
         <View style={styles.topImage}>
           <Image 
-            source={require("../assets/images/image.jpeg")}
+            source={{uri: props.avatar}}
             style={styles.insetImage}
             />
         </View>

@@ -2,12 +2,12 @@ import React from 'react';
 import { View, StyleSheet} from 'react-native'
 // import Video from "react-native-video";
 import { Video } from 'expo-av';
-import { Product} from './types'
+import { Product} from '../types'
 import {VideoOverlayText} from './videoOverlayText'
 
 
 
-export function BackgroundVideo(props: Partial<Product>){
+export function BackgroundVideo(props: Product){
     const video = React.useRef(null);
     const [status, setStatus] = React.useState({});
     
@@ -30,7 +30,7 @@ export function BackgroundVideo(props: Partial<Product>){
         onPlaybackStatusUpdate={status => setStatus(() => status)}
       />    
 
-      <VideoOverlayText/>    
+      <VideoOverlayText {...props}/>    
               
       </View>
   

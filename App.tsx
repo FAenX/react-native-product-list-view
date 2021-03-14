@@ -10,21 +10,36 @@ import Constants from 'expo-constants';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Home from './screens/home';
+import {store} from './store/index'
+import {Provider} from 'react-redux'
+import products from './data'
+
 
 
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
 
+  React.useEffect(()=>{
+    store.dispatch({type: 'SET_STATE', state: products})
+    // console.log(products)
+  }, [store.getState()])
+  
+  
+  
+
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
       <SafeAreaProvider style={styles.container}>
+        <Provider store={store}>
         <Home/>
-      {/* <NavigationContainer> */}
+
         <MyTabs />
-      {/* </NavigationContainer> */}
+      </Provider>
+      
+      
       <StatusBar style="dark" /> 
       </SafeAreaProvider>
     );
