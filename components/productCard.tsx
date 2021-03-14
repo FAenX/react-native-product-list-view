@@ -47,12 +47,22 @@ function BackgroundVideo(props: Partial<Product>){
         />        
             
         
+    <View style={styles.top}>
       <View style={styles.topText}>
         <Icon name='visibility' color="white"/>
         <Text style={{marginLeft: 5, color: 'white'}}>3.9k+ </Text>
       </View>
+
+      <View style={styles.topImage}>
+        <Image 
+          source={require("../assets/images/image.jpeg")}
+          style={styles.insetImage}
+          />
+      </View>
        
     </View>
+    </View>
+
         
   )
 }
@@ -141,10 +151,36 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       color: '#C1D0E4'
     },
+    
+
+    top: {
+      flex: 1,
+      zIndex: 100,
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      borderStyle: 'solid',
+      borderColor: 'black',
+      borderWidth: 1, 
+    },
+    topImage: {
+      width: 50,
+      height: 50,
+      borderStyle: 'solid',
+      borderColor: 'black',
+      borderWidth: 1, 
+      borderRadius: 50
+
+    },
     topText: {
       zIndex: 100,
       flexDirection: 'row',
-      justifyContent: 'flex-end'
+      
+      alignSelf: 'flex-end'
+    },
+    insetImage: {
+      width: 50,
+      height: 50,
+      borderRadius: 50
     }
     
   });
