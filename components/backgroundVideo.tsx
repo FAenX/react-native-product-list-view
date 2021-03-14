@@ -12,8 +12,8 @@ export function BackgroundVideo(props: Product){
     const [status, setStatus] = React.useState({});
     
     React.useEffect(()=>{
-      video !== null ? video.current.playAsync(): null
-    }, [])
+      video ? video.current.playAsync(): null
+    }, [video])
   
     return(
       <View key={1} style={styles.card}>

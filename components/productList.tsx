@@ -19,7 +19,7 @@ function ProductList(props: any) {
     <ScrollView style={styles.scrollView}>
        <View style={styles.productList}>
        {
-        s.length > 0 ? s.map((datum: any) => {
+        s && s.length > 0 ? s.map((datum: any) => {
           return (
             <>
           <ProductCard 

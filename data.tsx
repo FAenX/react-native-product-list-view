@@ -14,10 +14,30 @@ export default [
         description: "A very long description about the product sold at this store",
         avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
         created: '1 days ago',
+        oldPrice: 130,
+        newPrice: 7,
+        video: "../assets/video1.mp4",
+        type: "Flat-rate"
+     },
+     {
+        name: "Automatica women's",
+        description: "A very long description about the product sold at this store",
+        avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
+        created: '1 days ago',
         oldPrice: 15,
         newPrice: 7,
         video: "../assets/video1.mp4",
-        type: "Auction"
+        type: "Flat-rate"
+     },
+     {
+        name: "Automatica women's",
+        description: "A very long description about the product sold at this store",
+        avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
+        created: '1 days ago',
+        oldPrice: 15,
+        newPrice: 7,
+        video: "../assets/video1.mp4",
+        type: "Scheduled"
      },
      {
         name: "Automatica women's",
@@ -37,27 +57,7 @@ export default [
         oldPrice: 15,
         newPrice: 7,
         video: "../assets/video1.mp4",
-        type: "Auction"
-     },
-     {
-        name: "Automatica women's",
-        description: "A very long description about the product sold at this store",
-        avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
-        created: '1 days ago',
-        oldPrice: 15,
-        newPrice: 7,
-        video: "../assets/video1.mp4",
-        type: "Auction"
-     },
-     {
-        name: "Automatica women's",
-        description: "A very long description about the product sold at this store",
-        avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
-        created: '1 days ago',
-        oldPrice: 15,
-        newPrice: 7,
-        video: "../assets/video1.mp4",
-        type: "Auction"
+        type: "Scheduled"
      },
      {
         name: "Automatica women's",

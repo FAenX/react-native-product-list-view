@@ -7,7 +7,7 @@ import { Product} from '../types'
 
 
 export function VideoOverlayText(props: Product){
-  console.log(props)
+  // console.log(props)
     
   
     return(
@@ -21,7 +21,7 @@ export function VideoOverlayText(props: Product){
   
         <View style={styles.topImage}>
           <Image 
-            source={{uri: props.avatar}}
+            source={require("../assets/images/image.jpeg")}
             style={styles.insetImage}
             />
         </View>
@@ -41,9 +41,7 @@ export function VideoOverlayText(props: Product){
         zIndex: 100,
         flexDirection: 'column',
         justifyContent: 'space-between',
-        borderStyle: 'solid',
-        borderColor: 'black',
-        borderWidth: 1, 
+        
       },
       topImage: {
         width: 50,
@@ -61,7 +59,10 @@ export function VideoOverlayText(props: Product){
       insetImage: {
         width: 50,
         height: 50,
-        borderRadius: 50
+        borderRadius: 50,
+        // borderStyle: 'solid',
+        // borderColor: 'black',
+        // borderWidth: 1, 
       }
       
     });

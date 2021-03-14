@@ -20,7 +20,7 @@ export function FilterBar() {
 
   React.useEffect(()=>{
     const data = filterData(active)
-    console.log(data)
+    // console.log(data)
     store.dispatch({type: 'SET_STATE', state: data})
     
   }, [active])
