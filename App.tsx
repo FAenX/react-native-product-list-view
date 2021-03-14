@@ -9,6 +9,7 @@ import {MyTabs} from './components/bottomNavigation'
 import Constants from 'expo-constants';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Home from './screens/home';
 
 
 
@@ -20,9 +21,10 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider style={styles.container}>
-      <NavigationContainer>
+        <Home/>
+      {/* <NavigationContainer> */}
         <MyTabs />
-      </NavigationContainer>
+      {/* </NavigationContainer> */}
       <StatusBar style="dark" /> 
       </SafeAreaProvider>
     );
