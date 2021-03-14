@@ -12,7 +12,8 @@ type Product = {
   description: string,
   oldPrice: number,
   newPrice: number,
-  created: string
+  created: string,
+  video: string
 }
 
 function TextArea(props: Partial<Product>){
@@ -30,21 +31,25 @@ function TextArea(props: Partial<Product>){
 function BackgroundVideo(props: Partial<Product>){
   const video = React.useRef(null);
   const [status, setStatus] = React.useState({});
+  
+  React.useEffect(()=>{
+    video !== null ? video.current.playAsync(): null
+  })
+
   return(
     <View key={1} style={styles.card}>
         
         
-        <Video
-        source={require("../assets/video1.mp4")}
-        style={styles.videobg}
-        ref={video}
-        useNativeControls
-        resizeMode="stretch"
-        isLooping 
-        isMuted       
-        // auto?
-        onPlaybackStatusUpdate={status => setStatus(() => status)}
-        />        
+    <Video
+      source={require(props.video + ``)}
+      style={styles.videobg}
+      ref={video}
+      useNativeControls
+      resizeMode="stretch"
+      isLooping 
+      isMuted       
+      onPlaybackStatusUpdate={status => setStatus(() => status)}
+    />        
             
         
     <View style={styles.top}>
@@ -164,11 +169,9 @@ const styles = StyleSheet.create({
     },
     topImage: {
       width: 50,
-      height: 50,
-      borderStyle: 'solid',
-      borderColor: 'black',
-      borderWidth: 1, 
-      borderRadius: 50
+      height: 50,      
+      borderRadius: 50,
+      margin: 5
 
     },
     topText: {

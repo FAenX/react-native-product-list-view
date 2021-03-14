@@ -3,29 +3,13 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native'
 
 import useCachedResources from './hooks/useCachedResources';
+import {MyTabs} from './components/bottomNavigation'
 
-import  Home from './screens/home'
+
 import Constants from 'expo-constants';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { BottomSheet, Icon, Button } from 'react-native-elements';
-import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
-
-
-export function MyTabs() {
-  return (
-    <Tab.Navigator tabBar={props=><Icon name="menu"/>}>
-    <Tab.Screen name="home" component={Home} />
-    <Tab.Screen name="next" component={Home} />
-    <Tab.Screen name="next+" component={Home} />
-    {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
-  </Tab.Navigator>
-  );
-}
 
 
 export default function App() {
@@ -37,12 +21,9 @@ export default function App() {
     return (
       <SafeAreaProvider style={styles.container}>
       <NavigationContainer>
-        
-      
-       
-        <StatusBar style="dark" /> 
         <MyTabs />
       </NavigationContainer>
+      <StatusBar style="dark" /> 
       </SafeAreaProvider>
     );
   }

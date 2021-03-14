@@ -13,7 +13,8 @@ const products = [
        avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
        created: '3 days ago',
        oldPrice: 10,
-       newPrice: 7
+       newPrice: 7,
+       video: "../assets/video1.mp4"
     },
     {
       name: "Automatica women's",
@@ -21,7 +22,8 @@ const products = [
       avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
       created: '3 days ago',
       oldPrice: 10,
-      newPrice: 7
+      newPrice: 7,
+      video: "../assets/video1.mp4"
      },
 
      {
@@ -30,7 +32,8 @@ const products = [
       avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
       created: '3 days ago',
       oldPrice: 10,
-      newPrice: 7
+      newPrice: 7,
+      video: "../assets/video1.mp4"
      },
 
      {
@@ -39,7 +42,8 @@ const products = [
       avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
       created: '3 days ago',
       oldPrice: 10,
-      newPrice: 7
+      newPrice: 7,
+      video: "../assets/video1.mp4"
      },
 
      {
@@ -48,7 +52,8 @@ const products = [
       avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
       created: '3 days ago',
       oldPrice: 10,
-      newPrice: 7
+      newPrice: 7,
+      video: "../assets/video1.mp4"
      },
      {
       name: "Automatica women's",
@@ -56,7 +61,8 @@ const products = [
       avatar: "https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg",
       created: '3 days ago',
       oldPrice: 10,
-      newPrice: 7
+      newPrice: 7,
+      video: "../assets/video1.mp4"
      },
      
      
