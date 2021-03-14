@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Text, StyleSheet, StatusBar, View , SafeAreaView, ScrollView} from "react-native";
+import React from "react";
+import {StyleSheet, View , SafeAreaView, ScrollView} from "react-native";
 // import { SearchBar} from "react-native-elements";
 
 // import Constants from "expo-constants";
@@ -88,6 +88,7 @@ export function ProductList() {
                oldPrice={u.oldPrice}
                newPrice={u.newPrice}
                created={u.created}
+               video={u.video}
 
                />
             );
