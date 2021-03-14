@@ -47,9 +47,12 @@ function BackgroundVideo(props: Partial<Product>){
         />        
             
         
+      <View style={styles.topText}>
         <Icon name='visibility' color="white"/>
-            <Text style={{marginLeft: 5, color: 'white', zIndex: 100}}>3.9k+ </Text>
-        </View>
+        <Text style={{marginLeft: 5, color: 'white'}}>3.9k+ </Text>
+      </View>
+       
+    </View>
         
   )
 }
@@ -138,5 +141,10 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       color: '#C1D0E4'
     },
+    topText: {
+      zIndex: 100,
+      flexDirection: 'row',
+      justifyContent: 'flex-end'
+    }
     
   });
