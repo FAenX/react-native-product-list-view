@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     description: {
       textAlign: 'left',
       fontWeight: '900',
-      color: '#5B5F65',
+      color: 'grey',
       fontSize: 10,
       // textTransform: '',
         
@@ -148,13 +148,13 @@ const styles = StyleSheet.create({
       padding: 5
     },
     created:{
-      color: '#C1D0E4'
+      color: 'grey'
 
     },
     cost: {
       textAlign: 'right',
       fontWeight: 'bold',
-      color: '#C1D0E4'
+      color: 'grey'
     },
     
 
