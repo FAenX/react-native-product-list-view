@@ -34,14 +34,14 @@ function BackgroundVideo(props: Partial<Product>){
   
   React.useEffect(()=>{
     video !== null ? video.current.playAsync(): null
-  })
+  }, [])
 
   return(
     <View key={1} style={styles.card}>
         
         
     <Video
-      source={require(props.video + ``)}
+      source={require("../assets/video1.mp4")}
       style={styles.videobg}
       ref={video}
       useNativeControls
